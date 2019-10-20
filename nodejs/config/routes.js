@@ -2,7 +2,7 @@
 
 
 module.exports = function(app) {
-    var todoList = require('../controller');
+    var todoList = require('../controller/controller');
 
     app.route('/')
         .get(todoList.index);
@@ -24,4 +24,13 @@ module.exports = function(app) {
 
     app.route('/getPerson')
     	.post(todoList.getPerson);
+
+    app.route('/getCustomerFromOracle')
+        .get(todoList.getCustomer);
+
+     app.route('/findCustomer')
+        .post(todoList.findCustomer);
+
+    app.route('/insertCustomer')
+        .post(todoList.insertCustomer);
 };
